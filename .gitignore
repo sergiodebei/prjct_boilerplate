@@ -5,6 +5,10 @@ I.DS_Store
 *.sublime-workspace
 /.vscode
 
+# Vendor (e.g. Composer)
+vendor/*
+!vendor/.gitkeep
+
 # Node Package Manager
 node_modules
 
