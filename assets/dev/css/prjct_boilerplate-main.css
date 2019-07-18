@@ -1,0 +1,616 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font: 16px/1 sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, p, blockquote, figure, ol, ul {
+  margin: 0;
+  padding: 0;
+}
+
+main, li {
+  display: block;
+}
+
+h1, h2, h3, h4 {
+  font-size: inherit;
+}
+
+strong {
+  font-weight: bold;
+}
+
+a, button {
+  color: inherit;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+:focus {
+  outline: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*
+ *
+ * @param {px value}	$sizeValue		The value we want to convert from px to rem
+ *
+ * font-size: rem-calc(18);
+ */
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  background: #fff;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+/**
+ * Basic styles for links
+ */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/**
+ * Basic styles for images and videos
+ */
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/**
+ * Basic styles for focussed 
+ */
+*:focus {
+  outline: none;
+}
+
+/**
+ * Basic styles for text
+ */
+h1, h2, h3, h4, h5, h6, p, blockquote {
+  margin: 0;
+}
+
+/**
+ * Basic styles for form elements
+ */
+button {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+}
+
+.cb {
+  margin-top: 3rem !important;
+}
+
+.cb .row [class^=col-] {
+  margin-right: 20px;
+}
+
+.cb .row [class^=col-]:last-child {
+  margin-right: 0;
+}
+
+.cb--reverse .row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.cb--reverse .row [class^=col-] {
+  margin-right: 0;
+}
+
+.cb--reverse .row [class^=col-]:last-child {
+  margin-right: 3%;
+}
+
+.cb--columns img {
+  width: 100%;
+}
+
+.cb--fullwidth {
+  max-width: 100% !important;
+}
+
+.cb--fullwidth img {
+  margin: auto;
+}
+
+@media only screen and (max-width: 700px) {
+  .cb .row [class^=col-] {
+    margin: 0;
+    width: 100%;
+  }
+  .cb .row [class^=col-]:last-child {
+    margin-top: 2rem;
+  }
+  .cb--reverse .row [class^=col-]:last-child {
+    margin-right: 0;
+    margin-top: 2rem;
+  }
+  .cb--fullwidth {
+    margin: 4rem 0 0 !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .cb {
+    margin-top: 3rem !important;
+  }
+}
+
+.row:after {
+  display: block;
+  clear: both;
+}
+
+.row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+}
+
+.row + .row {
+  margin-top: 10px;
+}
+
+div[class^='col-'], div[class*=' col-'] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+div[class^='col-']:last-child, div[class*=' col-']:last-child {
+  margin-right: 0;
+}
+
+/*
+.col-1 { width:5.583333333333333%; }
+.col-2 { width:14.16666666666667%; }
+.col-3 { width:22.75%; }
+.col-4 { width:31.33333333333333%; }
+.col-5 { width:39.91666666666667%; }
+.col-6 { width:48.5%; }
+.col-7 { width:57.08333333333333%; }
+.col-8 { width:65.66666666666666%; }
+.col-9 { width:74.25%; }
+.col-10 { width:82.83333333333333%; }
+.col-11 { width:91.41666666666666%; }
+.col-12 { width:100%; }
+*/
+.col-3 {
+  width: calc((100% - 60px) / 4);
+}
+
+.col-4 {
+  width: calc((100% - 40px) / 3);
+}
+
+.col-6 {
+  width: calc((100% - 20px) / 2);
+}
+
+.col-12 {
+  width: 100%;
+}
+
+@media only screen and (max-width: 900px) {
+  .col-4 {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+@media only screen and (max-width: 515px) {
+  .col-3 {
+    width: calc((100% - 20px) / 2);
+  }
+}
+
+@media only screen and (max-width: 415px) {
+  .col-m-3, .col-m-4 {
+    width: 100%;
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media only screen and (max-width: 1130px) {
+  .container {
+    margin: 0 2rem;
+  }
+}
+
+main {
+  margin-bottom: 20px;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.4;
+  }
+}
+
+.lazy-video {
+  width: 100%;
+  position: relative;
+  padding-bottom: 56.25%;
+}
+
+.lazy-video .lazy-video__preview {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  -webkit-transition: opacity .3s ease;
+  -o-transition: opacity .3s ease;
+  transition: opacity .3s ease;
+  -webkit-transition-delay: .3s;
+       -o-transition-delay: .3s;
+          transition-delay: .3s;
+  background-size: cover;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lazy-video .lazy-video__preview:after {
+  cursor: pointer;
+  -webkit-transition: -webkit-transform .2s ease;
+  transition: -webkit-transform .2s ease;
+  -o-transition: transform .2s ease;
+  transition: transform .2s ease;
+  transition: transform .2s ease, -webkit-transform .2s ease;
+  -webkit-transition: transform .2s ease;
+  font-family: 'FontAwesome';
+  content: "\f04b";
+  font-size: 50px;
+  color: #000;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lazy-video .lazy-video__preview:hover:after {
+  -ms-transform: scale(1.05);
+      transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+}
+
+.lazy-video .lazy-video__preview--white:after {
+  color: #fff;
+}
+
+.lazy-video.lazy-loaded .lazy-video__preview {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.lazy-video iframe {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.lazy-video__alt {
+  margin-bottom: 25px;
+  display: inline-block;
+}
+
+.lazy-video__description {
+  position: absolute;
+  bottom: -24px;
+  right: 0;
+  font-size: 14px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  background-color: #ffffff;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: auto;
+  line-height: 1.6em;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
+  text-transform: none;
+  color: #000;
+}
+
+@media only screen and (max-width: 515px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 620px) {
+  body {
+    font-size: 15px;
+  }
+}
+
+h1 {
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  letter-spacing: .2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  line-height: 3.2rem;
+  letter-spacing: .2rem;
+}
+
+/* Larger than phablet */
+@media only screen and (max-width: 620px) {
+  h1 {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+  }
+}
+
+p {
+  margin-top: 0;
+}
+
+h1 {
+  text-transform: uppercase;
+  padding: 30px 0;
+}
+
+h1 + h3 {
+  margin-top: -20px;
+  margin-bottom: 30px;
+}
+
+h3 {
+  text-transform: uppercase;
+  margin: 20px 0;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.is-hidden {
+  height: 0px !important;
+  margin: 0px !important;
+  padding: 0px !important;
+  overflow: hidden !important;
+  border: none !important;
+}
+
+.relative {
+  position: relative;
+}
+
+.shadow {
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+          box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+.centerthetext {
+  text-align: center;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.wowo {
+  cursor: pointer;
+}
+
+.button {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: 11px 24px;
+  margin: 10px 0;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  color: #000;
+  border: 2px solid #000;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  line-height: normal;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #000;
+  color: #ffffff;
+}
+
+.button:hover {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.button.button_white {
+  background-color: #ffffff;
+  color: #000;
+}
+
+.button.button_white:hover {
+  background-color: #000;
+  color: #ffffff;
+}
+
+.button.button_success {
+  background-color: #ff6347;
+  border-color: #ff6347;
+  color: #ffffff;
+}
+
+.button.button_success:hover {
+  background-color: #e0473a;
+  border-color: #e0473a;
+}
+
+.button.button_error {
+  background-color: #aff4d5;
+  border-color: #aff4d5;
+  color: #ffffff;
+}
+
+.button.button_error:hover {
+  background-color: #85d9bf;
+  border-color: #85d9bf;
+}
