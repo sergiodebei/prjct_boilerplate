@@ -1,0 +1,62 @@
+{
+    "name": "prjct_boilerplate/bedrock",
+    "type": "project",
+    "license": "MIT",
+    "description": "WordPress boilerplate with modern development tools, easier configuration, and an improved folder structure",
+    "keywords": [
+      "roots",
+      "wordpress",
+      "stack",
+      "composer",
+      "wp"
+    ],
+    "config": {
+      "preferred-install": "dist"
+    },
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://wpackagist.org"
+      },
+      {
+        "type": "package",
+        "package": {
+          "name": "advanced-custom-fields/advanced-custom-fields-pro",
+          "version": "5.6.10",
+          "type": "wordpress-plugin",
+          "dist": {
+            "type": "zip",
+            "url": "https://connect.advancedcustomfields.com/index.php?p=pro&a=download&k=b3JkZXJfaWQ9MTM2ODMyfHR5cGU9ZGV2ZWxvcGVyfGRhdGU9MjAxOC0wOC0wOCAwOTo1MDo1OQ=="
+          }
+        }
+      }
+    ],
+    "require": {
+      "php": "~7.0",
+      "composer/installers": "^1.4",
+      "advanced-custom-fields/advanced-custom-fields-pro": "*",
+      "wpackagist-plugin/better-wp-security": "*",
+      "wpackagist-plugin/simple-page-ordering": "*",
+      "wpackagist-plugin/timber-library": "*",
+      "wpackagist-plugin/user-role-editor": "*",
+      "wpackagist-plugin/w3-total-cache": "dev-trunk",
+      "wpackagist-plugin/yoimages": "dev-trunk",
+      "wpackagist-plugin/wordpress-seo": "dev-trunk",
+      "wpackagist-plugin/classic-editor":"1.5",
+      "wpackagist-plugin/all-in-one-wp-migration":"7.0",
+      "wpackagist-plugin/toolbar-publish-button":"1.6.2",
+      "wpackagist-plugin/polylang":"2.6.2"
+    },
+    "require-dev": {
+    },
+    "extra": {
+      "installer-paths": {
+        "../../plugins/{$name}/": [
+          "type:wordpress-plugin"
+        ]
+      }
+    },
+    "scripts": {
+    }
+  }
+  
