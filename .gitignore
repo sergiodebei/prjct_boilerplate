@@ -1,0 +1,17 @@
+# System files
+I.DS_Store
+.DS_Store
+*.sublime-project
+*.sublime-workspace
+/.vscode
+
+# Node Package Manager
+node_modules
+
+# Logs
+*.log
+
+# Dotenv
+.env
+.env.*
+!.env.example
