@@ -1,0 +1,18 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    <article id="post-{{ post.ID }}" class="single_article">
+        {{ post.title }}
+        
+        <div class="article_body">
+            {% if post.blocks %}
+                {% include 'partials/contentblocks.twig' %}
+            {% else %}
+                {{post.content}}
+            {% endif %}
+        </div>
+
+    </article>
+
+{% endblock %}

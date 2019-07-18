@@ -1,0 +1,15 @@
+{% extends 'base.twig' %}
+
+{% block content %}
+
+    page
+
+    <div class="row articles">
+
+        {% for post in posts %}
+            {% include 'partials/post.twig' %}
+        {% endfor %}
+
+    </div>
+
+{% endblock %}
