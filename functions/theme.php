@@ -124,7 +124,7 @@ class StarterSite extends TimberSite {
     }
 
     function add_to_context( $context ) {
-        $context['menu'] = new TimberMenu();
+        $context['menu'] = new TimberMenu('primary-menu');
         $context['site'] = $this;
         // $context['site']->url = BASEURL . '';
         $context['site']->assets = './assets/';
@@ -166,7 +166,7 @@ class StarterSite extends TimberSite {
         'exclude_from_search' => false,
         // 'rewrite' => array('slug' => 'agenda'),
         // 'taxonomies' => 'array('category')',
-        'supports' => array('revisions', 'title','menu_order', 'page-attributes')
+        'supports' => array('title','menu_order', 'page-attributes', 'thumbnail', 'editor', 'excerpt')
         )
     );
 
@@ -192,7 +192,7 @@ class StarterSite extends TimberSite {
             array(
                 'page_title'    => 'Options',
                 'menu_title'    => 'Options',
-                'menu_slug'     => 'project-options',
+                'menu_slug'     => 'options',
                 'capability'    => 'edit_posts',
                 'redirect'      => false
             )
