@@ -46,7 +46,8 @@
       "wpackagist-plugin/all-in-one-wp-migration":"7.0",
       "wpackagist-plugin/toolbar-publish-button":"1.6.2",
       "wpackagist-plugin/polylang":"2.6.2",
-      "wpackagist-plugin/disable-blogging": "dev-trunk"
+      "wpackagist-plugin/disable-blogging": "dev-trunk",
+      "wpackagist-plugin/codepress-admin-columns":"3.4.1"
     },
     "require-dev": {
     },
