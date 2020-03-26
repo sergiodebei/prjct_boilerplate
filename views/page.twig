@@ -4,6 +4,8 @@
 
     page
 
+    {% if post.blocks %}{% include '_blocks/blocks.twig' %}{% endif %}
+
     <div class="row articles">
 
         {% for post in posts %}
