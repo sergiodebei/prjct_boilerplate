@@ -130,6 +130,30 @@
                             "maxlength": ""
                         },
                         {
+                            "key": "field_5e7d35467831a",
+                            "label": "Url or file",
+                            "name": "url_or_file",
+                            "type": "radio",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "choices": {
+                                "url": "Url",
+                                "file": "File"
+                            },
+                            "allow_null": 0,
+                            "other_choice": 0,
+                            "default_value": "",
+                            "layout": "vertical",
+                            "return_format": "value",
+                            "save_other_choice": 0
+                        },
+                        {
                             "key": "field_5baa6d2bdfe32",
                             "label": "Button link",
                             "name": "button_link",
@@ -139,7 +163,7 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5718eebdfa453",
+                                        "field": "field_5e7d35467831a",
                                         "operator": "==",
                                         "value": "url"
                                     }
@@ -160,7 +184,7 @@
                                         {
                                             "key": "field_5baa6d6adfe35",
                                             "label": "Url",
-                                            "name": "il_url",
+                                            "name": "url",
                                             "type": "page_link",
                                             "instructions": "",
                                             "required": 0,
@@ -189,7 +213,7 @@
                                         {
                                             "key": "field_5baa6d44dfe33",
                                             "label": "Url",
-                                            "name": "el_url",
+                                            "name": "url",
                                             "type": "text",
                                             "instructions": "",
                                             "required": 0,
@@ -224,7 +248,7 @@
                             "conditional_logic": [
                                 [
                                     {
-                                        "field": "field_5718eebdfa453",
+                                        "field": "field_5e7d35467831a",
                                         "operator": "==",
                                         "value": "file"
                                     }
@@ -311,5 +335,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1585261072
+    "modified": 1585264744
 }

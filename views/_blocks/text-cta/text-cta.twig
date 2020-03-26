@@ -1,0 +1,8 @@
+{% include '_components/text-cta/text-cta.twig' with {
+    text: block.text,
+    linkText: block.button_text,
+    linkUrl: block.button_link[0].url,
+    linkFile: block.button_file.url,
+    linkType: block.url_or_file,
+    linkIntOrExt: block.button_link[0].acf_fc_layout
+} %}
