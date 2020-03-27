@@ -41,7 +41,7 @@
                         {
                             "key": "field_5e7d255f48fe5",
                             "label": "Video description",
-                            "name": "video-description",
+                            "name": "video_description",
                             "type": "text",
                             "instructions": "",
                             "required": 0,
@@ -60,7 +60,7 @@
                         {
                             "key": "field_5e7d263861276",
                             "label": "Video preview",
-                            "name": "video-preview",
+                            "name": "video_preview",
                             "type": "image",
                             "instructions": "",
                             "required": 0,
@@ -335,5 +335,5 @@
     ],
     "active": 1,
     "description": "",
-    "modified": 1585264744
+    "modified": 1585350703
 }
