@@ -6,12 +6,6 @@
 
     {% if post.blocks %}{% include '_blocks/blocks.twig' %}{% endif %}
 
-    <div class="row articles">
-
-        {% for post in posts %}
-            {% include 'partials/post.twig' %}
-        {% endfor %}
-
-    </div>
+    {% include '_components/post/post.twig' %}
 
 {% endblock %}
