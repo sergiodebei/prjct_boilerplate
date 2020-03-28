@@ -1,0 +1,33 @@
+{% set shareImage = site.url ~ '/wp-content/uploads/' ~ post.thumbnail.file %}
+{% set defaultImage = options.website_image.sizes.large %}
+
+<!-- Standard -->
+<meta name='description' content='{{ site.description }}'>
+{# <meta name='keywords' content='{{ metadata.siteKeywords }}'>#}
+<meta name='author' content='Author'> 
+<link rel="canonical" href="{{ site.url }}">
+
+<!-- Schema.org -->
+<meta itemprop='name' content='{{ site.name }}'>
+<meta itemprop='description' content='{{ site.description }}'>
+<meta itemprop='url' content='{{ site.url }}'>
+{# <meta itemprop='keywords' content='{{ metadata.siteKeywords }}'>#}
+<meta itemprop='image' content='{{ shareImage|default(defaultImage) }}'>
+<meta itemprop='sourceOrganization' content='{{ site.name }}'>
+{# <meta itemprop='inLanguage' content='{% if function('pll_current_language') == 'it' %}it-IT{% else %}en-GB{% endif %}'> #}
+
+<!-- OpenGraph -->
+<meta property='og:title' content='{{ post.title|default(site.name) }}'>
+<meta property='og:description' content='{{ site.description }}'>
+<meta property='og:image' content='{{ shareImage|default(defaultImage) }}'/>
+<meta property='og:type' content='website'>
+<meta property='og:url' content='{{ site.url }}'>
+<meta property='og:site_name' content='{{ site.name }}' />
+{# <meta property='og:locale' content='{% if function('pll_current_language') == 'it' %}it-IT{% else %}en-GB{% endif %}' />  #}
+
+<!-- Twitter Card -->
+{# <meta name='twitter:title' content='{{ post.title|default(site.name) }}' />
+<meta name='twitter:description' content='{{ site.description }}' />
+<meta name='twitter:card' content='summary_large_image'>
+<meta name='twitter:site' content='@borrellis'>
+<meta name='twitter:image:src' content='{{ shareImage|default(defaultImage) }}' />  #}

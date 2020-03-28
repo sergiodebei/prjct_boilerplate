@@ -11,17 +11,14 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     
-    <meta name="description" content="">
-
     {# <link rel="shortcut icon" href="{{theme.link}}/assets/dev/img/favicon.png"> #}
     {# {% include 'partials/meta-favicons.twig' %} #}
+    {% include "partials/share.twig" %}
     {% include 'partials/gtm.twig' %}
 
     {# <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet"> #}
     <link rel="stylesheet" href="{{theme.link}}/assets/dev/css/prjct_boilerplate-main.css">
     <script type="application/javascript" src="{{theme.link}}/assets/dev/js/prjct_boilerplate-main.js"></script>
-
-    {# <meta name="google-site-verification" content="L1bfjr8FC2M4RV87_LV2EKlyZO8fNQPpe7kmUEOaFY8" /> #}
 
     {{ wp_head }}
 </head>
