@@ -1,0 +1,80 @@
+{% if posts.pagination.pages is not empty %}
+    <nav class="pagination">
+        <ul class="pagination__list">
+            {% if pagination.pages|first and pagination.pages|first.current != true %}
+                <li class="li--first li--btn">
+                    <a href="{{ pagination.pages|first.link }}">
+                        First
+                        {# <ion-icon name="skip-backward"></ion-icon> #}
+                    </a>
+                </li>
+            {% else %}
+                <li class="li--first li--btn li--disabled">
+                    <button disabled>
+                        First
+                        {# <ion-icon name="skip-backward"></ion-icon> #}
+                    </button>
+                </li>
+            {% endif %}
+
+            {% if pagination.prev %}
+                <li class="li--prev li--btn">
+                    <a href="{{ pagination.prev.link }}">
+                        Prev
+                        {# <ion-icon name="rewind"></ion-icon>     #}
+                    </a>
+                </li>
+            {% else %}
+                <li class="li--prev li--btn li--disabled">
+                    <button disabled>
+                        Prev
+                        {# <ion-icon name="rewind"></ion-icon>  #}
+                    </button>
+                </li>
+            {% endif %}
+
+            {% for page in pagination.pages %}
+                {% if page.link %}
+                    <li>
+                        <a href="{{ page.link }}" class="{{ page.class }}">{{ page.title }}</a>
+                    </li>
+                {% else %}
+                    <li class="li--current">
+                        <span class="{{ page.class }}">{{ page.title }}</span>
+                    </li>
+                {% endif %}
+            {% endfor %}
+
+            {% if pagination.next %}
+                <li class="li--next li--btn">
+                    <a href="{{ pagination.next.link }}">
+                        Next
+                        {# <ion-icon name="fastforward"></ion-icon> #}
+                    </a>
+                </li>
+            {% else %}
+                <li class="li--next li--btn li--disabled">
+                    <button disabled>
+                        Next
+                        {# <ion-icon name="fastforward"></ion-icon> #}
+                    </button>
+                </li>
+            {% endif %}
+            {% if pagination.pages|last and pagination.pages|last.current != true %}
+                <li class="li--last li--btn">
+                    <a href="{{ pagination.pages|last.link }}">
+                        Last
+                        {# <ion-icon name="skip-forward"></ion-icon> #}
+                    </a>
+                </li>
+            {% else %}
+                <li class="li--last li--btn li--disabled">
+                    <button disabled>
+                        Last
+                        {# <ion-icon name="skip-forward"></ion-icon> #}
+                    </button>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endif %}

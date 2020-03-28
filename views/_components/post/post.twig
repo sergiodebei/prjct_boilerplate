@@ -4,4 +4,6 @@
         {% include '_components/post/post-item.twig' %}
     {% endfor %}
 
+    {% include '_components/pagination/pagination.twig' with { pagination: posts.pagination } %}
+
 </div>
