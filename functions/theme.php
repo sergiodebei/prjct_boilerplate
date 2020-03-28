@@ -6,6 +6,18 @@
     // add_image_size('lightbox-preview-hor', 300, 225, true);
     // add_image_size('lightbox-preview-ver', 225, 300, true);
 
+    if( function_exists('acf_add_options_page') ) {  
+        acf_add_options_page(
+            array(
+                'page_title' 	=> 'Options',
+                'menu_title'	=> 'Options',
+                'menu_slug' 	=> 'options',
+                'capability'	=> 'edit_posts',
+                'redirect'      => false
+            )
+        );
+    }
+
     // register_taxonomy( 'project-cat', array( 'projects' ), array(
     //     'labels' => array(
     //         'name'                         => 'Projects Categories',
@@ -69,7 +81,7 @@ class StarterSite extends TimberSite {
     // add_action( 'admin_init', array($this, 'post_remove'));
     // add_action( 'init', array( $this, 'register_post_types' ) );
     // add_action( 'init', array( $this, 'register_taxonomies' ) );
-    // add_action( 'init', array($this, 'option_page') );
+    add_action( 'init', array($this, 'option_page') );
     // add_action( 'after_setup_theme', array($this, 'register_image_sizes'));
     // add_filter( 'tiny_mce_before_init', array( $this, 'wptiny' ) );
     add_filter( 'show_admin_bar', array( $this, 'my_function_admin_bar' ) );
@@ -129,7 +141,7 @@ class StarterSite extends TimberSite {
         // $context['site']->url = BASEURL . '';
         $context['site']->assets = './assets/';
         $context['site']->is_home = is_front_page();
-        // $context['options'] = get_fields('options');
+        $context['options'] = get_fields('options');
         return $context;
     }
 
