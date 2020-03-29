@@ -26,7 +26,7 @@
     {{ wp_head }}
 </head>
 
-<body class="{{ body_class }}" itemscope itemtype="//schema.org/WebPage">
+<body data-handle="{{ body_class }}" class="{{ body_class }}" itemscope itemtype="//schema.org/WebPage">
 
     {% include 'partials/gtm_noscript.twig' %}
 
@@ -34,7 +34,7 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    {% include 'partials/header.twig' %}
+    {% include '_components/header/header.twig' %}
 
     <main>
 
@@ -42,7 +42,7 @@
 
     </main>
 
-    {% include 'partials/footer.twig' %}
+    {% include '_components/footer/footer.twig' %}
 
     {{ wp_footer }}
     {% block scripts %}{% endblock %}

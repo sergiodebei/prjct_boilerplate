@@ -1,0 +1,11 @@
+{% for block in post.blocks %}
+
+{# heading" string(4) "text" string(5) "video" string(16) "image-full-width" #}
+
+    {% set blockType = block.acf_fc_layout %}
+
+    {% set file = '_blocks/' ~ blockType ~ '/' ~ blockType ~ '.twig' %}
+
+    {% include file with {block: block} %}
+
+{% endfor %}

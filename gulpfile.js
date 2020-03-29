@@ -279,7 +279,10 @@ gulp.task('webserver', function() {
 gulp.task('default', function() {
   livereload.listen();
   gulp.watch('src/scss/**/*.scss', ['styles', 'append-css-files']);
+  
   gulp.watch('src/css_files/**/*.css', ['styles', 'append-css-files']);
+  gulp.watch('views/_blocks/**/*.scss', ['styles', 'append-css-files']);
+  gulp.watch('views/_components/**/*.scss', ['styles', 'append-css-files']);
   gulp.watch('src/js/**/*.js', ['scripts', 'append-js-files']);
   gulp.watch('src/js_files/**/*.js', ['scripts', 'append-js-files']);
   gulp.watch('src/img/**/*', ['images']);

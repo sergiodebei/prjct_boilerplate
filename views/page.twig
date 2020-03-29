@@ -4,12 +4,8 @@
 
     page
 
-    <div class="row articles">
+    {% if post.blocks %}{% include '_blocks/blocks.twig' %}{% endif %}
 
-        {% for post in posts %}
-            {% include 'partials/post.twig' %}
-        {% endfor %}
-
-    </div>
+    {% include '_components/post/post.twig' %}
 
 {% endblock %}

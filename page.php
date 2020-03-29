@@ -7,6 +7,7 @@ $template = array( 'page-' . $post->post_name . '.twig', 'page.twig' );
 $context = Timber::get_context();
 $post = new TimberPost();
 $context['post'] = $post;
+$context['post']->blocks = $post->get_field('blocks');
 
 $args = array(
     // Get post type project

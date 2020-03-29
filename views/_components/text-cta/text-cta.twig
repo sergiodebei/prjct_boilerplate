@@ -1,0 +1,26 @@
+{# ############### #}
+{# Text CTA Assets  #}
+{# ############### #}
+
+{# {{ text }}
+{{ linkText }}
+{{ linkType }}
+{{ linkIntOrExt }}
+{{ linkUrl }}
+{{linkFile}} #}
+
+<section class="text-cta">
+
+    {{ text }}
+
+    {% if linkType == 'url' %}
+        {% if linkIntOrExt == 'internal_link' %}
+            <a href="{{ linkUrl }}">{{ linkText }}</a>
+            {% elseif linkIntOrExt == 'external_link' %}
+            <a href="{{ linkUrl }}" target="_blank">{{ linkText }}</a>
+        {% endif %}
+    {% else %}
+        <a href="{{ linkFile }}" target="_blank">{{ linkText }}</a>
+    {% endif %}
+
+</section>
