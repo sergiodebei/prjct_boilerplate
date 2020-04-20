@@ -1,44 +1,47 @@
 {
   "name": "prjct_boilerplate",
+  "version": "1.0.0",
+  "description": "- [Development](docs/DEVELOPMENT.md) - [Deployment](docs/DEPLOYMENT.md)",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "NODE_ENV=development webpack-dev-server",
+    "build": "NODE_ENV=production webpack"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sergiodebei/prjct_boilerplate.git"
   },
-  "version": "0.0.1",
+  "keywords": [],
+  "author": "Sergio De Bei",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/sergiodebei/prjct_boilerplate/issues"
+  },
+  "homepage": "https://github.com/sergiodebei/prjct_boilerplate#readme",
   "devDependencies": {
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-autoprefixer": "*",
-    "gulp-clean": "^0.4.0",
-    "gulp-concat": "*",
-    "gulp-debug": "*",
-    "gulp-gzip": "*",
-    "gulp-header": "*",
-    "gulp-imagemin": "*",
-    "gulp-jshint": "*",
-    "gulp-livereload": "*",
-    "gulp-minify-css": "*",
-    "gulp-plumber": "*",
-    "gulp-rename": "*",
-    "gulp-rimraf": "*",
-    "gulp-sass": "*",
-    "gulp-sass-glob": "^1.0.9",
-    "gulp-sourcemaps": "^1.6.0",
-    "gulp-svg-sprite": "^1.4.0",
-    "gulp-tap": "^0.1.1",
-    "gulp-uglify": "*",
-    "gulp-util": "*",
-    "gulp-wait": "*",
-    "gulp-webserver": "^0.9.1",
-    "gulp.spritesmith": "*",
-    "jshint": "^2.9.5",
-    "gulp-notify": "^3.2.0"
-  },
-  "description": "### INSTALL ### - Make sure you have ruby+sass (on osx in terminal type \"sudo gem install sass\") - Make sure you have node.js installed (http://nodejs.org/) - Go to your project folder in terminal (\"cd path/to/folder/\" or type \"cd \" and drag the folder to the terminal window) - in terminal type: \"sudo npm init\" and enter the data - in terminal type: \"sudo npm install\" - to start building, just type \"gulp\" in terminal and edit the files in the BUILD dir.",
-  "homepage": "https://github.com/sergiodebei/prjct_boilerplate",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Sergio De Bei"
+    "@babel/core": "^7.4.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/polyfill": "^7.4.0",
+    "@babel/preset-env": "^7.4.2",
+    "@types/node": "^11.11.6",
+    "babel-loader": "^8.0.5",
+    "clean-webpack-plugin": "^2.0.1",
+    "css-loader": "^2.1.1",
+    "file-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "node-sass-glob-importer": "^5.3.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.1",
+    "postcss-loader": "^3.0.0",
+    "postcss-preset-env": "^6.6.0",
+    "prettier": "^1.16.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "terser-webpack-plugin": "^1.3.0",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.42.1",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-manifest-plugin": "^2.0.3"
+  }
 }
