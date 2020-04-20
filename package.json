@@ -40,5 +40,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Sergio De Bei"
+  "author": "Sergio De Bei",
+  "dependencies": {
+    "conditioner-core": "^2.3.3"
+  }
 }

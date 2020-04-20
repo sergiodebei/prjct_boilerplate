@@ -285,6 +285,8 @@ gulp.task('default', function() {
   gulp.watch('views/_components/**/*.scss', ['styles', 'append-css-files']);
   gulp.watch('src/js/**/*.js', ['scripts', 'append-js-files']);
   gulp.watch('src/js_files/**/*.js', ['scripts', 'append-js-files']);
+  // gulp.watch('views/_blocks/**/*.js', ['styles', 'append-js-files']);
+  // gulp.watch('views/_components/**/*.js', ['styles', 'append-js-files']);
   gulp.watch('src/img/**/*', ['images']);
   gulp.watch('src/icons/**/*', ['copy-icons']);
   // gulp.watch('www/assets/**/*', ['deploy:assets']);
